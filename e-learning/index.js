@@ -1,23 +1,34 @@
-const express =require('express');
-const path = require('path');
-const app = express();
+const express = require("express");
+const path = require("path");
 const port = 8080;
 
-app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'ui'));
+const app = express();
 
-app.get('/',(req,res)=>{
-    res.render('index',{
-        title:'HOME_PAGE'
-    })
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname,"ui"));
+
+//Home route
+app.get("/",(req,res)=>{
+       res.render("index",{
+           title:"Home_page"
+       });
+});
+//About route
+app.get("/about",(req,res)=>{
+    res.render("about",{
+        title: "About_us"
+    });
 });
 
-app.get('/about',(req,res)=>{
-    res.render('about',{
-        title:'ABOUT_US'
-    })
+app.get("/courses",(req,res)=>{
+    res.render("course",{
+        title: "course"
+    });
 });
 
+
+
+//Server Listen
 app.listen(port,()=>{
-    console.log(`server is running on port http://localhost:${port}`);
-})
+     console.log(`Server is up at http://localhost:${port}`);
+});
