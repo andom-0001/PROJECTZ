@@ -25,8 +25,16 @@ app.get("/courses",(req,res)=>{
         title: "course"
     });
 });
-
-
+app.get("/service",(req,res)=>{
+    res.render("service",{
+        title: "service"
+    });
+});
+app.get("/contact",(req,res)=>{
+    res.render("contact",{
+        title: "contact"
+    });
+});
 
 //Server Listen
 app.listen(port,()=>{
