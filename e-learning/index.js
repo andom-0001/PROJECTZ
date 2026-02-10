@@ -25,7 +25,7 @@ app.get("/courses",(req,res)=>{
         title: "course"
     });
 });
-app.get("/service",(req,res)=>{
+app.get("/services",(req,res)=>{
     res.render("service",{
         title: "service"
     });
