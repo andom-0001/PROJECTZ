@@ -14,8 +14,6 @@ router.get('/',(req,res)=>{
 router.get('/api',( req,res )=>{
     res.json(course);
 });
-
-//add a course
 router.post(
     const { name } = req.body;
     const newCourse = {
@@ -25,8 +23,6 @@ router.post(
     courses.push(newCourse);
     res.json(newCourse);
 );
-
-//to update a course
 router.put('/api/:id',(req,res)=>{
     const updateCourse = parseInt(req.params.id);
 
