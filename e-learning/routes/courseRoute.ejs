@@ -14,16 +14,18 @@ router.get('/',(req,res)=>{
 router.get('/api',( req,res )=>{
     res.json(course);
 });
-router.post(
+
+router.post('/api',(req,res)=>{
     const { name } = req.body;
     const newCourse = {
         id: id++,
         name
     };
-    courses.push(newCourse);
+    course.push(newCourse);
     res.json(newCourse);
-);
+});
 router.put('/api/:id',(req,res)=>{
+    
     const updateCourse = parseInt(req.params.id);
 
     let course = course.filter(key => key.id !== updateCourse);
